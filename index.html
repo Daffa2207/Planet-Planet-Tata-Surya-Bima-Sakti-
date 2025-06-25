@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planet Tata Surya</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="scroll-fade">
+    <h1>Planet Tata Surya</h1>
+  </header>
+
+  <nav class="scroll-fade">
+    <a href="Merkurius.html" target="_blank">Merkurius</a>
+    <a href="Venus.html" target="_blank">Venus</a>
+    <a href="Bumi.html" target="_blank">Bumi</a>
+    <a href="Mars.html" target="_blank">Mars</a>
+    <a href="Jupiter.html" target="_blank">Jupiter</a>
+    <a href="Saturnus.html" target="_blank">Saturnus</a>
+    <a href="Uranus.html" target="_blank">Uranus</a>
+    <a href="Neptunus.html" target="_blank">Neptunus</a>
+  </nav>
+
+  <section class="hero scroll-fade">
+    <h1>Planet-Planet Tata Surya</h1>
+    <p>Eksplorasi dunia luar angkasa dari Merkurius hingga Neptunus</p>
+  </section>
+
+  <section class="planet-container scroll-fade">
+    <div class="planet-card">
+      <img src="Merkurius.jpg" alt="Merkurius">
+      <div class="planet-name"><a href="Merkurius.html" target="_blank">MERKURIUS</a></div>
+    </div>
+    <div class="planet-card">
+      <img src="Venus.jpg" alt="Venus">
+      <div class="planet-name"><a href="Venus.html" target="_blank">VENUS</a></div>
+    </div>
+    <div class="planet-card">
+      <img src="Bumi.jpg" alt="Bumi">
+      <div class="planet-name"><a href="Bumi.html" target="_blank">BUMI</a></div>
+    </div>
+    <div class="planet-card">
+      <img src="Mars.jpg" alt="Mars">
+      <div class="planet-name"><a href="Mars.html" target="_blank">MARS</a></div>
+    </div>
+    <div class="planet-card">
+      <img src="Jupiter.jpg" alt="Jupiter">
+      <div class="planet-name"><a href="Jupiter.html" target="_blank">JUPITER</a></div>
+    </div>
+    <div class="planet-card">
+      <img src="Saturnus.jpg" alt="Saturnus">
+      <div class="planet-name"><a href="Saturnus.html" target="_blank">SATURNUS</a></div>
+    </div>
+    <div class="planet-card">
+      <img src="Uranus.jpg" alt="Uranus">
+      <div class="planet-name"><a href="Uranus.html" target="_blank">URANUS</a></div>
+    </div>
+    <div class="planet-card">
+      <img src="Neptunus.jpg" alt="Neptunus">
+      <div class="planet-name"><a href="Neptunus.html" target="_blank">NEPTUNUS</a></div>
+    </div>
+  </section>
+
+  <section class="guestbook scroll-fade">
+    <h2>Buku Tamu</h2>
+    <form action="#" method="POST">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <script>
+    const faders = document.querySelectorAll('.scroll-fade');
+
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planet Mars</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      background-image: url('Mars.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      margin-top: 60px;
+    }
+
+    .planet-thumbnail {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    .planet-thumbnail:hover {
+      transform: scale(1.1);
+    }
+
+    .planet-large {
+      display: none;
+      width: 70%;
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-top: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    video {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #f62c9b;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-button:hover {
+      background-color: #641f4c;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Gambar thumbnail -->
+  <img src="Mars.jpg" alt="Mars kecil" class="planet-thumbnail" onclick="showLarge()">
+
+  <h1>Planet Mars</h1>
+
+  <p>
+    Mars adalah planet keempat dari Matahari dan sering dijuluki sebagai "Planet Merah" karena permukaannya yang kaya akan besi oksida. Mars merupakan salah satu planet yang paling banyak dieksplorasi karena potensi adanya kehidupan di masa lalu dan kemungkinan sebagai tempat tinggal masa depan manusia.
+  </p>
+
+  <!-- Video edukasi otomatis -->
+  <h2>Video Edukasi tentang Mars</h2>
+  <video autoplay muted loop playsinline>
+    <source src="Mars Video.mp4" type="video/mp4">
+    Browser Anda tidak mendukung pemutar video.
+  </video>
+
+  <!-- Gambar besar -->
+  <img src="Mars.jpg" alt="Mars besar" class="planet-large" id="largeImage">
+
+  <!-- Deskripsi Detail -->
+  <h2>Informasi Lengkap Planet Mars</h2>
+  <p><strong>Ukuran:</strong> Diameter sekitar 6.779 km</p>
+  <p><strong>Jarak dari Matahari:</strong> Sekitar 227,9 juta km</p>
+  <p><strong>Atmosfer:</strong> Tipis, terdiri dari karbon dioksida (95%), nitrogen, dan argon</p>
+  <p><strong>Suhu Permukaan:</strong> Rata-rata sekitar -60°C</p>
+  <p><strong>Permukaan:</strong> Berbatu, dengan gunung tertinggi di tata surya (Olympus Mons) dan lembah besar (Valles Marineris)</p>
+  <p><strong>Ciri Khas:</strong> Memiliki dua satelit kecil (Phobos dan Deimos), musim seperti di Bumi, dan badai debu besar</p>
+  <p><strong>Penelitian:</strong> Telah dijelajahi oleh berbagai misi seperti Viking, Curiosity, Perseverance, dan misi masa depan menuju koloni manusia</p>
+  <p><strong>Penemu Awal:</strong> Telah diamati sejak zaman kuno. Namanya berasal dari dewa perang Romawi karena warna merahnya yang mencolok di langit malam.</p>
+
+  <a href="Index.html" class="back-button">← Kembali ke Halaman Utama</a>
+</div>
+
+<script>
+  function showLarge() {
+    document.getElementById('largeImage').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

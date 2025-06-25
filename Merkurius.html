@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planet Merkurius</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      background-image: url('Merkurius.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      margin-top: 60px;
+    }
+
+    .planet-thumbnail {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      transition: 0.4s ease;
+      cursor: pointer;
+    }
+
+    .planet-thumbnail:hover {
+      transform: scale(1.1);
+    }
+
+    .planet-large {
+      display: none;
+      width: 70%;
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-top: 20px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    video {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #f62c9b;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-button:hover {
+      background-color: #641f4c;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Gambar thumbnail -->
+  <img src="Merkurius.jpg" alt="Merkurius kecil" class="planet-thumbnail" onclick="showLarge()">
+
+  <h1>Planet Merkurius</h1>
+
+  <p>
+    Merkurius adalah planet terdekat dari Matahari dan merupakan planet terkecil di tata surya. Karena jaraknya yang sangat dekat, permukaannya mengalami suhu ekstrem antara siang dan malam. Planet ini tidak memiliki atmosfer yang cukup untuk mempertahankan panas atau pelindung dari meteorit. Permukaannya dipenuhi kawah, mirip dengan Bulan.
+  </p>
+
+  <!-- Video edukasi otomatis -->
+  <h2>Video Edukasi tentang Merkurius</h2>
+  <video autoplay muted loop playsinline>
+    <source src="Merkurius Video.mp4" type="video/mp4">
+    Browser Anda tidak mendukung pemutar video.
+  </video>
+
+  <!-- Gambar besar -->
+  <img src="Merkurius.jpg" alt="Merkurius besar" class="planet-large" id="largeImage">
+
+  <!-- Deskripsi Detail -->
+  <h2>Informasi Lengkap Planet Merkurius</h2>
+  <p><strong>Ukuran:</strong> Diameter sekitar 4.879 km</p>
+  <p><strong>Jarak dari Matahari:</strong> Sekitar 57,9 juta km</p>
+  <p><strong>Atmosfer:</strong> Hampir tidak ada (eksosfer tipis yang terdiri dari oksigen, natrium, dan helium)</p>
+  <p><strong>Suhu Permukaan:</strong> Siang hari bisa mencapai 430°C dan malam hari turun hingga -180°C</p>
+  <p><strong>Permukaan:</strong> Berbatu dan dipenuhi kawah akibat tumbukan meteorit</p>
+  <p><strong>Ciri Khas:</strong> Tidak memiliki satelit alami, periode rotasi lambat (59 hari Bumi), dan revolusi cepat (88 hari Bumi)</p>
+  <p><strong>Penelitian:</strong> Pernah dikunjungi oleh wahana Mariner 10 (1974) dan MESSENGER (2004–2015). Saat ini, misi BepiColombo sedang dalam perjalanan menuju Merkurius untuk studi lebih lanjut.</p>
+  <p><strong>Penemu Awal:</strong> Sudah diketahui sejak zaman kuno. Bangsa Babilonia, Yunani, dan Romawi telah mencatat pengamatan terhadap Merkurius. Nama "Merkurius" berasal dari dewa Romawi pengantar pesan karena gerakannya yang cepat di langit malam.</p>
+
+  <a href="index.html" class="back-button">← Kembali ke Halaman Utama</a>
+</div>
+
+<script>
+  function showLarge() {
+    document.getElementById('largeImage').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

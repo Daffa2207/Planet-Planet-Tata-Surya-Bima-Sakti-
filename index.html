@@ -29,38 +29,14 @@
   </section>
 
   <section class="planet-container scroll-fade">
-    <div class="planet-card">
-      <img src="Merkurius.jpg" alt="Merkurius">
-      <div class="planet-name"><a href="Merkurius.html" target="_blank">MERKURIUS</a></div>
-    </div>
-    <div class="planet-card">
-      <img src="Venus.jpg" alt="Venus">
-      <div class="planet-name"><a href="Venus.html" target="_blank">VENUS</a></div>
-    </div>
-    <div class="planet-card">
-      <img src="Bumi.jpg" alt="Bumi">
-      <div class="planet-name"><a href="Bumi.html" target="_blank">BUMI</a></div>
-    </div>
-    <div class="planet-card">
-      <img src="Mars.jpg" alt="Mars">
-      <div class="planet-name"><a href="Mars.html" target="_blank">MARS</a></div>
-    </div>
-    <div class="planet-card">
-      <img src="Jupiter.jpg" alt="Jupiter">
-      <div class="planet-name"><a href="Jupiter.html" target="_blank">JUPITER</a></div>
-    </div>
-    <div class="planet-card">
-      <img src="Saturnus.jpg" alt="Saturnus">
-      <div class="planet-name"><a href="Saturnus.html" target="_blank">SATURNUS</a></div>
-    </div>
-    <div class="planet-card">
-      <img src="Uranus.jpg" alt="Uranus">
-      <div class="planet-name"><a href="Uranus.html" target="_blank">URANUS</a></div>
-    </div>
-    <div class="planet-card">
-      <img src="Neptunus.jpg" alt="Neptunus">
-      <div class="planet-name"><a href="Neptunus.html" target="_blank">NEPTUNUS</a></div>
-    </div>
+    <div class="planet-card"><img src="Merkurius.jpg"><div class="planet-name"><a href="Merkurius.html">MERKURIUS</a></div></div>
+    <div class="planet-card"><img src="Venus.jpg"><div class="planet-name"><a href="Venus.html">VENUS</a></div></div>
+    <div class="planet-card"><img src="Bumi.jpg"><div class="planet-name"><a href="Bumi.html">BUMI</a></div></div>
+    <div class="planet-card"><img src="Mars.jpg"><div class="planet-name"><a href="Mars.html">MARS</a></div></div>
+    <div class="planet-card"><img src="Jupiter.jpg"><div class="planet-name"><a href="Jupiter.html">JUPITER</a></div></div>
+    <div class="planet-card"><img src="Saturnus.jpg"><div class="planet-name"><a href="Saturnus.html">SATURNUS</a></div></div>
+    <div class="planet-card"><img src="Uranus.jpg"><div class="planet-name"><a href="Uranus.html">URANUS</a></div></div>
+    <div class="planet-card"><img src="Neptunus.jpg"><div class="planet-name"><a href="Neptunus.html">NEPTUNUS</a></div></div>
   </section>
 
   <section class="guestbook scroll-fade">
@@ -79,13 +55,12 @@
     </form>
   </section>
 
-  <script>
-    const faders = document.querySelectorAll('.scroll-fade');
+  <button id="backToTop" title="Kembali ke atas">↑</button>
 
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
+  <script>
+    // Efek scroll animasi
+    const faders = document.querySelectorAll('.scroll-fade');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
 
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -95,8 +70,31 @@
       });
     }, appearOptions);
 
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+    // Back to top
+    const backToTopBtn = document.getElementById("backToTop");
+    window.onscroll = function () {
+      backToTopBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
+    };
+    backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Validasi form
+    document.querySelector('.guestbook form').addEventListener('submit', function (e) {
+      const nama = document.getElementById('nama').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const pesan = document.getElementById('pesan').value.trim();
+      if (!nama || !email || !pesan) {
+        e.preventDefault();
+        alert("Harap lengkapi semua kolom formulir!");
+      }
+    });
+
+    // Popup selamat datang
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        alert("Selamat datang di website Tata Surya! Jelajahi planet-planet luar angkasa.");
+      }, 1000);
     });
   </script>
 
